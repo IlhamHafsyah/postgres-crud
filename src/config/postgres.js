@@ -6,14 +6,14 @@ const client = new Client({
   host: process.env.HOST,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-  port: 5432
+  port: process.env.DB_PORT
 })
 
 client.connect((error) => {
   if (error) {
     throw error
   }
-  console.log('You are now connected...')
+  console.log('Connect to postgresSQL')
 })
 
 module.exports = client
